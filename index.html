@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>North Star Bakery | Neighborhood Bread &amp; Pastry</title>
+  <meta name="description" content="North Star Bakery is a neighborhood bakery known for handmade bread and pastries. Browse our menu, learn our story, and place a pre-order." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <img src="images/bakery-logo.png" alt="North Star Bakery logo, a star above a loaf of bread" />
+        <span class="brand-name">North Star Bakery</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="scallop" role="presentation"></div>
+
+  <main id="main-content">
+
+    <!-- Welcome / hero -->
+    <section class="hero">
+      <div class="wrap flex-2">
+        <div>
+          <span class="section-eyebrow">Welcome</span>
+          <h1>Handmade bread and pastry, baked for the neighborhood since sunrise.</h1>
+          <p class="lede">North Star Bakery is a small, community-centered bakery. Every loaf is mixed, shaped, and baked in-house, and every order — from a single croissant to a wedding cake — is treated like it matters, because it does.</p>
+          <p>
+            <a class="button" href="contact.html">Place a pre-order</a>
+            <a class="button secondary" href="products.html">See our menu</a>
+          </p>
+        </div>
+        <img src="images/bakery-storefront.jpg" alt="North Star Bakery's storefront with warm string lights and an open sign in the window" />
+      </div>
+    </section>
+
+    <!-- What we're known for -->
+    <section class="section-alt">
+      <div class="wrap">
+        <span class="section-eyebrow">What we're known for</span>
+        <h2>Three things you can always count on</h2>
+        <div class="flex flex-3">
+          <div class="card">
+            <h3>Naturally leavened bread</h3>
+            <p>Our sourdough starter is over ten years old. Loaves are baked in small batches daily, never held over for the next morning.</p>
+          </div>
+          <div class="card">
+            <h3>Made-from-scratch pastry</h3>
+            <p>Laminated dough is rolled by hand and croissants are shaped fresh each morning — no par-baked or frozen shortcuts.</p>
+          </div>
+          <div class="card">
+            <h3>Custom cakes for real life</h3>
+            <p>Birthdays, showers, and neighborhood milestones. We work with you on flavor, size, and timeline for events big and small.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Audio welcome message -->
+    <section>
+      <div class="wrap">
+        <span class="section-eyebrow">Hear from us</span>
+        <h2>A short welcome from our head baker</h2>
+        <div class="media-block">
+          <audio controls>
+            <source src="media/bakery-welcome.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element. You can read the transcript below instead.
+          </audio>
+          <p class="fallback">
+            <strong>Transcript:</strong> "Hi, I'm Marisol, head baker at North Star. We started this bakery to bring the smell of fresh bread back to the block. Everything you'll find here — the sourdough, the morning pastries, the cakes we build for your celebrations — is made a few feet from where you're standing. Come say hello."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hours and location snippet -->
+    <section class="section-alt">
+      <div class="wrap">
+        <span class="section-eyebrow">Visit us</span>
+        <h2>Hours &amp; location</h2>
+        <dl class="info-strip">
+          <div>
+            <dt>Address</dt>
+            <dd>214 Maple Street, your neighborhood</dd>
+          </div>
+          <div>
+            <dt>Weekday hours</dt>
+            <dd>Tuesday–Friday, 7:00 AM–6:00 PM</dd>
+          </div>
+          <div>
+            <dt>Weekend hours</dt>
+            <dd>Saturday–Sunday, 8:00 AM–3:00 PM</dd>
+          </div>
+          <div>
+            <dt>Closed</dt>
+            <dd>Mondays</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Featured item of the week: responsive picture -->
+    <section>
+      <div class="wrap flex flex-2 align-center">
+        <picture>
+          <source media="(min-width: 700px)" srcset="images/bakery-feature-large.jpg" />
+          <source media="(max-width: 699px)" srcset="images/bakery-feature-small.jpg" />
+          <img src="images/bakery-feature-large.jpg" alt="This week's featured item, a fig and honey galette dusted with sugar" />
+        </picture>
+        <div>
+          <span class="section-eyebrow">Featured item of the week</span>
+          <h2>Fig &amp; honey galette</h2>
+          <p>Rustic pastry filled with roasted figs, local honey, and a touch of thyme. Available while supplies last — pre-order to guarantee yours for the weekend.</p>
+          <p><a class="button" href="contact.html">Reserve one now</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="scallop" role="presentation"></div>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <h2>North Star Bakery</h2>
+        <p>214 Maple Street<br />Open Tuesday–Sunday</p>
+      </div>
+      <div>
+        <h2>Quick links</h2>
+        <nav aria-label="Footer">
+          <ul style="list-style:none; padding:0; margin:0;">
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact &amp; pre-orders</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div>
+        <h2>Get in touch</h2>
+        <p>hello@northstarbakery.example<br />(555) 010-0192</p>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 North Star Bakery. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

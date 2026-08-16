@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &amp; Pre-Orders | North Star Bakery</title>
+  <meta name="description" content="Contact North Star Bakery to place a pre-order or ask a general question. Find our hours and location." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <img src="images/bakery-logo.png" alt="North Star Bakery logo, a star above a loaf of bread" />
+        <span class="brand-name">North Star Bakery</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="scallop" role="presentation"></div>
+
+  <main id="main-content">
+
+    <section class="hero">
+      <div class="wrap">
+        <span class="section-eyebrow">Get in touch</span>
+        <h1>Place a pre-order or send us a question</h1>
+        <p class="lede">Use the form below for pre-orders, custom cake questions, or anything else. We reply to most messages within one business day.</p>
+      </div>
+    </section>
+
+    <!-- Pre-order / inquiry form -->
+    <section>
+      <div class="wrap flex flex-2 align-center">
+
+        <form action="#" method="post">
+
+          <fieldset>
+            <legend>Your information</legend>
+
+            <div class="field">
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" required autocomplete="name" />
+            </div>
+
+            <div class="field">
+              <label for="email">Email address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                autocomplete="email"
+                placeholder="you@example.com"
+              />
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Your request</legend>
+
+            <div class="field">
+              <span id="request-type-label">Request type</span>
+              <div class="radio-group" role="radiogroup" aria-labelledby="request-type-label">
+                <label>
+                  <input type="radio" name="request-type" value="pre-order" checked required />
+                  Pre-order
+                </label>
+                <label>
+                  <input type="radio" name="request-type" value="general-question" />
+                  General question
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="pickup-date">Preferred pickup date</label>
+              <input type="date" id="pickup-date" name="pickup-date" />
+            </div>
+
+            <div class="field">
+              <label for="item-details">
+                Item details
+                <span class="hint">What would you like, and how many?</span>
+              </label>
+              <textarea
+                id="item-details"
+                name="item-details"
+                required
+                minlength="5"
+                placeholder="e.g. 2 sourdough boules and a dozen morning buns"
+              ></textarea>
+            </div>
+
+            <div class="field">
+              <label for="allergy-notes">
+                Allergy notes
+                <span class="hint">Optional — let us know about any allergies or dietary needs</span>
+              </label>
+              <textarea id="allergy-notes" name="allergy-notes" placeholder="e.g. tree nut allergy"></textarea>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="button">Send request</button>
+        </form>
+
+        <div>
+          <span class="section-eyebrow">Visit us</span>
+          <h2>Hours &amp; location</h2>
+          <dl class="info-strip">
+            <div>
+              <dt>Address</dt>
+              <dd>214 Maple Street, your neighborhood</dd>
+            </div>
+            <div>
+              <dt>Weekday hours</dt>
+              <dd>Tuesday–Friday, 7:00 AM–6:00 PM</dd>
+            </div>
+            <div>
+              <dt>Weekend hours</dt>
+              <dd>Saturday–Sunday, 8:00 AM–3:00 PM</dd>
+            </div>
+            <div>
+              <dt>Closed</dt>
+              <dd>Mondays</dd>
+            </div>
+            <div>
+              <dt>Phone</dt>
+              <dd>(555) 010-0192</dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <dd>hello@northstarbakery.example</dd>
+            </div>
+          </dl>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div class="scallop" role="presentation"></div>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <h2>North Star Bakery</h2>
+        <p>214 Maple Street<br />Open Tuesday–Sunday</p>
+      </div>
+      <div>
+        <h2>Quick links</h2>
+        <nav aria-label="Footer">
+          <ul style="list-style:none; padding:0; margin:0;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About us</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div>
+        <h2>Get in touch</h2>
+        <p>hello@northstarbakery.example<br />(555) 010-0192</p>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 North Star Bakery. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
