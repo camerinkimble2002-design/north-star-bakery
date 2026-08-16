@@ -22,7 +22,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="products.html">Products</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="contact.html" aria-current="page">Contact</a></li>
+          <li><a href="contact.html" aria-current="page">Contact<span id="cart-badge" class="cart-badge" hidden aria-live="polite"></span></a></li>
         </ul>
       </nav>
     </div>
@@ -43,76 +43,89 @@
     <section>
       <div class="wrap flex flex-2 align-center">
 
-        <form action="#" method="post">
+        <div>
+          <div id="contact-order-summary"></div>
+          <div id="form-success" class="media-block" role="status" tabindex="-1" hidden style="margin-bottom:1.5rem; border-color:var(--color-berry);">
+            <strong>Thanks — your request has been received!</strong> We'll follow up by email to confirm your pickup details.
+          </div>
 
-          <fieldset>
-            <legend>Your information</legend>
+          <form id="preorder-form" action="#" method="post" novalidate>
 
-            <div class="field">
-              <label for="name">Full name</label>
-              <input type="text" id="name" name="name" required autocomplete="name" />
-            </div>
+            <fieldset>
+              <legend>Your information</legend>
 
-            <div class="field">
-              <label for="email">Email address</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                autocomplete="email"
-                placeholder="you@example.com"
-              />
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>Your request</legend>
-
-            <div class="field">
-              <span id="request-type-label">Request type</span>
-              <div class="radio-group" role="radiogroup" aria-labelledby="request-type-label">
-                <label>
-                  <input type="radio" name="request-type" value="pre-order" checked required />
-                  Pre-order
-                </label>
-                <label>
-                  <input type="radio" name="request-type" value="general-question" />
-                  General question
-                </label>
+              <div class="field">
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" required autocomplete="name" aria-describedby="name-error" />
+                <span id="name-error" class="field-error" role="alert"></span>
               </div>
-            </div>
 
-            <div class="field">
-              <label for="pickup-date">Preferred pickup date</label>
-              <input type="date" id="pickup-date" name="pickup-date" />
-            </div>
+              <div class="field">
+                <label for="email">Email address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                  aria-describedby="email-error"
+                />
+                <span id="email-error" class="field-error" role="alert"></span>
+              </div>
+            </fieldset>
 
-            <div class="field">
-              <label for="item-details">
-                Item details
-                <span class="hint">What would you like, and how many?</span>
-              </label>
-              <textarea
-                id="item-details"
-                name="item-details"
-                required
-                minlength="5"
-                placeholder="e.g. 2 sourdough boules and a dozen morning buns"
-              ></textarea>
-            </div>
+            <fieldset>
+              <legend>Your request</legend>
 
-            <div class="field">
-              <label for="allergy-notes">
-                Allergy notes
-                <span class="hint">Optional — let us know about any allergies or dietary needs</span>
-              </label>
-              <textarea id="allergy-notes" name="allergy-notes" placeholder="e.g. tree nut allergy"></textarea>
-            </div>
-          </fieldset>
+              <div class="field">
+                <span id="request-type-label">Request type</span>
+                <div class="radio-group" role="radiogroup" aria-labelledby="request-type-label">
+                  <label>
+                    <input type="radio" name="request-type" value="pre-order" checked required />
+                    Pre-order
+                  </label>
+                  <label>
+                    <input type="radio" name="request-type" value="general-question" />
+                    General question
+                  </label>
+                </div>
+              </div>
 
-          <button type="submit" class="button">Send request</button>
-        </form>
+              <div class="field">
+                <label for="pickup-date">Preferred pickup date</label>
+                <input type="date" id="pickup-date" name="pickup-date" aria-describedby="pickup-date-error" />
+                <span id="pickup-date-error" class="field-error" role="alert"></span>
+              </div>
+
+              <div class="field">
+                <label for="item-details">
+                  Item details
+                  <span class="hint">What would you like, and how many?</span>
+                </label>
+                <textarea
+                  id="item-details"
+                  name="item-details"
+                  required
+                  minlength="5"
+                  placeholder="e.g. 2 sourdough boules and a dozen morning buns"
+                  aria-describedby="item-details-error"
+                ></textarea>
+                <span id="item-details-error" class="field-error" role="alert"></span>
+              </div>
+
+              <div class="field">
+                <label for="allergy-notes">
+                  Allergy notes
+                  <span class="hint">Optional — let us know about any allergies or dietary needs</span>
+                </label>
+                <textarea id="allergy-notes" name="allergy-notes" placeholder="e.g. tree nut allergy"></textarea>
+              </div>
+            </fieldset>
+
+            <button type="submit" class="button">Send request</button>
+          </form>
+        </div>
 
         <div>
           <span class="section-eyebrow">Visit us</span>
@@ -174,6 +187,6 @@
     </div>
     <p class="copyright">&copy; 2026 North Star Bakery. All rights reserved.</p>
   </footer>
-
+  <script src="js/app.js"></script>
 </body>
 </html>

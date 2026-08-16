@@ -22,7 +22,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="products.html" aria-current="page">Products</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Contact<span id="cart-badge" class="cart-badge" hidden aria-live="polite"></span></a></li>
         </ul>
       </nav>
     </div>
@@ -35,108 +35,158 @@
       <div class="wrap">
         <span class="section-eyebrow">Our menu</span>
         <h1>Breads, pastries, and cakes</h1>
-        <p class="lede">Prices below are ranges — final cost depends on size and add-ons. Everything is available for pickup; use the contact page to place a pre-order or ask about custom cakes.</p>
+        <p class="lede">Tap the + button on anything you'd like, and we'll build your pre-order as you go. Your selections are saved automatically and carry over to the contact form.</p>
       </div>
     </section>
 
-    <!-- Product image -->
     <section>
-      <div class="wrap flex flex-2 align-center">
+      <div class="wrap flex flex-2 products-layout" style="align-items:flex-start;">
         <div>
-          <span class="section-eyebrow">Fresh daily</span>
-          <h2>Baked in small batches, every morning</h2>
-          <p>We bake in rounds throughout the day rather than one large batch, so there's almost always something coming out of the oven warm. If a specific loaf or pastry is important to your visit, a pre-order guarantees it's set aside for you.</p>
-        </div>
-        <img src="images/bakery-bread.jpg" alt="An assortment of freshly baked sourdough loaves cooling on a wire rack" />
-      </div>
-    </section>
 
-    <!-- Breads -->
-    <section class="section-alt">
-      <div class="wrap">
-        <h2>Breads</h2>
-        <div class="flex flex-3">
-          <div class="card">
-            <h3>Classic sourdough</h3>
-            <p>Naturally leavened, crackling crust, open crumb.</p>
-            <p class="price">$7–$9</p>
+          <!-- Product image -->
+          <div class="flex flex-2 align-center" style="margin-bottom:2rem;">
+            <div>
+              <span class="section-eyebrow">Fresh daily</span>
+              <h2>Baked in small batches, every morning</h2>
+              <p>We bake in rounds throughout the day rather than one large batch, so there's almost always something coming out of the oven warm. If a specific loaf or pastry is important to your visit, a pre-order guarantees it's set aside for you.</p>
+            </div>
+            <img src="images/bakery-bread.jpg" alt="An assortment of freshly baked sourdough loaves cooling on a wire rack" />
           </div>
-          <div class="card">
-            <h3>Seeded multigrain</h3>
-            <p>Whole wheat base with oats, flax, and sunflower seeds.</p>
-            <p class="price">$8–$10</p>
-          </div>
-          <div class="card">
-            <h3>Soft dinner rolls</h3>
-            <p>Sold by the half-dozen, brushed with honey butter.</p>
-            <p class="price">$6–$8</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Signature loaf figure -->
-    <section>
-      <div class="wrap flex flex-2 align-center">
-        <figure>
-          <img src="images/bakery-signature-loaf.jpg" alt="A dark, deeply scored sourdough boule with a floured crust, North Star Bakery's signature loaf" />
-          <figcaption>Our signature loaf: a 48-hour cold-fermented sourdough boule, scored by hand before baking.</figcaption>
-        </figure>
-        <div>
-          <span class="section-eyebrow">Signature item</span>
-          <h2>The North Star boule</h2>
-          <p>This is the loaf we're known for around the neighborhood. It ferments slowly over two days, which gives it a deeper flavor and a longer shelf life than a same-day loaf.</p>
-          <p class="price">$9</p>
-        </div>
-      </div>
-    </section>
+          <!-- Breads -->
+          <h2>Breads</h2>
+          <div class="flex flex-3">
+            <div class="card">
+              <h3>Classic sourdough</h3>
+              <p>Naturally leavened, crackling crust, open crumb.</p>
+              <p class="price">$8</p>
+              <div class="qty-stepper">
+                <button type="button" data-product-id="classic-sourdough" data-step="down" aria-label="Remove one Classic Sourdough">&minus;</button>
+                <span class="qty-value" data-qty-for="classic-sourdough">0</span>
+                <button type="button" data-product-id="classic-sourdough" data-step="up" aria-label="Add one Classic Sourdough">+</button>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Seeded multigrain</h3>
+              <p>Whole wheat base with oats, flax, and sunflower seeds.</p>
+              <p class="price">$9</p>
+              <div class="qty-stepper">
+                <button type="button" data-product-id="seeded-multigrain" data-step="down" aria-label="Remove one Seeded Multigrain">&minus;</button>
+                <span class="qty-value" data-qty-for="seeded-multigrain">0</span>
+                <button type="button" data-product-id="seeded-multigrain" data-step="up" aria-label="Add one Seeded Multigrain">+</button>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Soft dinner rolls</h3>
+              <p>Sold by the half-dozen, brushed with honey butter.</p>
+              <p class="price">$7</p>
+              <div class="qty-stepper">
+                <button type="button" data-product-id="dinner-rolls" data-step="down" aria-label="Remove one Soft Dinner Rolls">&minus;</button>
+                <span class="qty-value" data-qty-for="dinner-rolls">0</span>
+                <button type="button" data-product-id="dinner-rolls" data-step="up" aria-label="Add one Soft Dinner Rolls">+</button>
+              </div>
+            </div>
+          </div>
 
-    <!-- Pastries -->
-    <section class="section-alt">
-      <div class="wrap">
-        <h2>Pastries</h2>
-        <div class="flex flex-3">
-          <div class="card">
-            <h3>Butter croissant</h3>
-            <p>Laminated by hand, baked fresh each morning.</p>
-            <p class="price">$4–$5</p>
+          <!-- Signature loaf figure -->
+          <div class="flex flex-2 align-center" style="margin:2rem 0;">
+            <figure>
+              <img src="images/bakery-signature-loaf.jpg" alt="A dark, deeply scored sourdough boule with a floured crust, North Star Bakery's signature loaf" />
+              <figcaption>Our signature loaf: a 48-hour cold-fermented sourdough boule, scored by hand before baking.</figcaption>
+            </figure>
+            <div>
+              <span class="section-eyebrow">Signature item</span>
+              <h2>The North Star boule</h2>
+              <p>This is the loaf we're known for around the neighborhood. It ferments slowly over two days, which gives it a deeper flavor and a longer shelf life than a same-day loaf.</p>
+              <p class="price">$9</p>
+              <div class="qty-stepper">
+                <button type="button" data-product-id="signature-loaf" data-step="down" aria-label="Remove one North Star Boule">&minus;</button>
+                <span class="qty-value" data-qty-for="signature-loaf">0</span>
+                <button type="button" data-product-id="signature-loaf" data-step="up" aria-label="Add one North Star Boule">+</button>
+              </div>
+            </div>
           </div>
-          <div class="card">
-            <h3>Seasonal galette</h3>
-            <p>Rustic fruit pastry that changes with what's in season.</p>
-            <p class="price">$6–$8</p>
-          </div>
-          <div class="card">
-            <h3>Morning bun</h3>
-            <p>Cinnamon-sugar croissant dough, twisted and caramelized.</p>
-            <p class="price">$5–$6</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Cakes -->
-    <section>
-      <div class="wrap">
-        <h2>Cakes</h2>
-        <div class="flex flex-3">
-          <div class="card">
-            <h3>Birthday layer cake</h3>
-            <p>Choice of vanilla, chocolate, or seasonal flavor. Feeds 8–12.</p>
-            <p class="price">$45–$65</p>
+          <!-- Pastries -->
+          <h2>Pastries</h2>
+          <div class="flex flex-3">
+            <div class="card">
+              <h3>Butter croissant</h3>
+              <p>Laminated by hand, baked fresh each morning.</p>
+              <p class="price">$4.50</p>
+              <div class="qty-stepper">
+                <button type="button" data-product-id="butter-croissant" data-step="down" aria-label="Remove one Butter Croissant">&minus;</button>
+                <span class="qty-value" data-qty-for="butter-croissant">0</span>
+                <button type="button" data-product-id="butter-croissant" data-step="up" aria-label="Add one Butter Croissant">+</button>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Seasonal galette</h3>
+              <p>Rustic fruit pastry that changes with what's in season.</p>
+              <p class="price">$7</p>
+              <div class="qty-stepper">
+                <button type="button" data-product-id="seasonal-galette" data-step="down" aria-label="Remove one Seasonal Galette">&minus;</button>
+                <span class="qty-value" data-qty-for="seasonal-galette">0</span>
+                <button type="button" data-product-id="seasonal-galette" data-step="up" aria-label="Add one Seasonal Galette">+</button>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Morning bun</h3>
+              <p>Cinnamon-sugar croissant dough, twisted and caramelized.</p>
+              <p class="price">$5.50</p>
+              <div class="qty-stepper">
+                <button type="button" data-product-id="morning-bun" data-step="down" aria-label="Remove one Morning Bun">&minus;</button>
+                <span class="qty-value" data-qty-for="morning-bun">0</span>
+                <button type="button" data-product-id="morning-bun" data-step="up" aria-label="Add one Morning Bun">+</button>
+              </div>
+            </div>
           </div>
-          <div class="card">
-            <h3>Celebration sheet cake</h3>
-            <p>Feeds 20–30, great for events and gatherings.</p>
-            <p class="price">$70–$95</p>
+
+          <!-- Cakes -->
+          <h2 style="margin-top:2rem;">Cakes</h2>
+          <div class="flex flex-3">
+            <div class="card">
+              <h3>Birthday layer cake</h3>
+              <p>Choice of vanilla, chocolate, or seasonal flavor. Feeds 8–12.</p>
+              <p class="price">$55</p>
+              <div class="qty-stepper">
+                <button type="button" data-product-id="birthday-cake" data-step="down" aria-label="Remove one Birthday Layer Cake">&minus;</button>
+                <span class="qty-value" data-qty-for="birthday-cake">0</span>
+                <button type="button" data-product-id="birthday-cake" data-step="up" aria-label="Add one Birthday Layer Cake">+</button>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Celebration sheet cake</h3>
+              <p>Feeds 20–30, great for events and gatherings.</p>
+              <p class="price">$80</p>
+              <div class="qty-stepper">
+                <button type="button" data-product-id="sheet-cake" data-step="down" aria-label="Remove one Celebration Sheet Cake">&minus;</button>
+                <span class="qty-value" data-qty-for="sheet-cake">0</span>
+                <button type="button" data-product-id="sheet-cake" data-step="up" aria-label="Add one Celebration Sheet Cake">+</button>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Custom event cake</h3>
+              <p>Designed with you for weddings, showers, and milestones.</p>
+              <p class="price">Starting at $120</p>
+              <p class="hint" style="margin-top:0.75rem;">Not a quick-add item — <a href="contact.html">tell us the details</a> and we'll follow up.</p>
+            </div>
           </div>
-          <div class="card">
-            <h3>Custom event cake</h3>
-            <p>Designed with you for weddings, showers, and milestones.</p>
-            <p class="price">Starting at $120</p>
-          </div>
+
         </div>
-        <p style="margin-top:1.5rem;">Have something specific in mind? <a href="contact.html">Send us the details</a> and we'll follow up with options and timing.</p>
+
+        <!-- Live order summary -->
+        <aside id="order-summary" class="order-summary" aria-label="Your pre-order summary">
+          <h2>Your pre-order</h2>
+          <p id="order-summary-empty" class="hint">Nothing added yet — use the + buttons to build your order.</p>
+          <ul id="order-summary-list"></ul>
+          <p id="order-summary-total"></p>
+          <p style="margin-top:1rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <a class="button" href="contact.html">Continue to pre-order form</a>
+            <button type="button" id="clear-order" class="button secondary">Clear</button>
+          </p>
+        </aside>
+
       </div>
     </section>
 
@@ -166,6 +216,6 @@
     </div>
     <p class="copyright">&copy; 2026 North Star Bakery. All rights reserved.</p>
   </footer>
-
+  <script src="js/app.js"></script>
 </body>
 </html>
