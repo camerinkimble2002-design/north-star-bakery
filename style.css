@@ -1,0 +1,654 @@
+/* =========================================================
+   North Star Bakery — shared stylesheet (Touchstone 3)
+   Mobile-first, Flexbox layout, one media query breakpoint.
+
+   Color palette (4 main colors):
+     --color-cream    background
+     --color-crust    dark brown — header/footer, body text, headings
+     --color-berry    primary accent — buttons, links, prices
+     --color-gold     secondary accent — focus states, dividers, highlights
+   Typography (2 font families):
+     --font-display   Fraunces  (headings, brand)
+     --font-body      Work Sans (body copy, UI)
+   ========================================================= */
+
+:root {
+  --color-cream: #faf6ee;
+  --color-crust: #3b2414;
+  --color-berry: #a63446;
+  --color-gold: #e3a93c;
+
+  /* tints/shades derived from the 4 main colors, not new hues */
+  --color-cream-shade: #f1e4cc;
+  --color-crust-soft: #6b5643;
+  --color-border: #e0cfa9;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Work Sans", "Segoe UI", sans-serif;
+
+  --radius: 10px;
+  --max-width: 1080px;
+  --gap: 1.25rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-crust);
+  background: var(--color-cream);
+  line-height: 1.6;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  color: var(--color-crust);
+  line-height: 1.15;
+  margin-top: 0;
+}
+
+a {
+  color: var(--color-berry);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- Header / Nav (mobile-first: stacked, Flexbox column) ---------- */
+
+.site-header {
+  background: var(--color-crust);
+  color: #fff;
+}
+
+.site-header .wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.brand img {
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+  background: var(--color-gold);
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  color: #f1e4cc;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.main-nav a:hover,
+.main-nav a[aria-current="page"] {
+  border-bottom-color: var(--color-gold);
+  color: #fff;
+}
+
+/* Scalloped divider — signature element evoking a pastry edge */
+.scallop {
+  height: 22px;
+  background: var(--color-crust);
+  background-image: radial-gradient(circle at 11px 0, var(--color-cream) 11px, transparent 12px);
+  background-size: 22px 22px;
+  background-repeat: repeat-x;
+}
+
+/* ---------- Hero (mobile-first: single column via Flexbox) ---------- */
+
+.hero {
+  background: linear-gradient(180deg, var(--color-cream-shade), var(--color-cream));
+  padding: 2.5rem 0 3rem;
+}
+
+.hero .wrap.flex-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.7rem, 6vw, 2.9rem);
+  font-style: italic;
+  max-width: 22ch;
+}
+
+.hero .lede {
+  font-size: 1.05rem;
+  color: var(--color-crust-soft);
+  max-width: 55ch;
+}
+
+.button {
+  display: inline-block;
+  background: var(--color-berry);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #8a2837;
+}
+
+.button.secondary {
+  background: transparent;
+  color: var(--color-crust);
+  border: 2px solid var(--color-crust);
+}
+
+.button.secondary:hover {
+  background: var(--color-crust);
+  color: #fff;
+}
+
+/* ---------- Sections ---------- */
+
+section {
+  padding: 2.5rem 0;
+}
+
+.section-alt {
+  background: var(--color-cream-shade);
+}
+
+.section-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  color: var(--color-berry);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* ---------- Flexbox layout system ----------
+   Mobile-first: .flex wraps to a single column by default.
+   At the tablet/desktop breakpoint, .flex-2 becomes two
+   side-by-side columns and .flex-3 becomes three. */
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+
+.flex > * {
+  flex: 1 1 100%;
+}
+
+.flex-3 > * {
+  flex: 1 1 100%;
+}
+
+.flex-2 > * {
+  flex: 1 1 100%;
+}
+
+.flex-2.align-center {
+  align-items: center;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  flex: 1 1 100%;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-weight: 600;
+  color: var(--color-berry);
+}
+
+/* ---------- Figure ---------- */
+
+figure {
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  flex: 1 1 100%;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+}
+
+figcaption {
+  padding: 0.85rem 1.1rem;
+  font-size: 0.95rem;
+  color: var(--color-crust-soft);
+  font-style: italic;
+}
+
+/* ---------- Hours / location snippet ---------- */
+
+.info-strip {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.info-strip dt {
+  font-weight: 600;
+  color: var(--color-crust);
+  font-family: var(--font-display);
+}
+
+.info-strip dd {
+  margin: 0.2rem 0 0;
+  color: var(--color-crust-soft);
+}
+
+/* ---------- Audio / Video ---------- */
+
+.media-block {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.media-block p.fallback {
+  font-size: 0.95rem;
+  color: var(--color-crust-soft);
+}
+
+audio,
+video {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* ---------- Form ---------- */
+
+form {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+fieldset {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem 1.5rem;
+  margin: 0 0 1.75rem;
+}
+
+fieldset + fieldset {
+  margin-top: 1.75rem;
+}
+
+legend {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-crust);
+  padding: 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.field {
+  margin-bottom: 1.1rem;
+}
+
+.field:last-child {
+  margin-bottom: 0;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.hint {
+  font-weight: 400;
+  color: var(--color-crust-soft);
+  font-size: 0.85rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-cream);
+  color: var(--color-crust);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 5.5rem;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 400;
+}
+
+.radio-group input {
+  width: auto;
+}
+
+/* ---------- Nav cart badge ---------- */
+
+.main-nav a {
+  position: relative;
+}
+
+.cart-badge {
+  display: inline-block;
+  background: var(--color-gold);
+  color: var(--color-crust);
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+  border-radius: 999px;
+  margin-left: 0.35rem;
+  vertical-align: middle;
+}
+
+.cart-badge[hidden] {
+  display: none;
+}
+
+/* ---------- Quantity stepper ---------- */
+
+.qty-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+
+.qty-stepper button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid var(--color-crust);
+  background: #fff;
+  color: var(--color-crust);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.qty-stepper button:hover {
+  background: var(--color-crust);
+  color: #fff;
+}
+
+.qty-stepper .qty-value {
+  min-width: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ---------- Order summary panel ---------- */
+
+.order-summary {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  position: sticky;
+  top: 1rem;
+}
+
+.order-summary h2 {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
+#order-summary-list {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.order-summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.95rem;
+}
+
+.order-summary-row:last-child {
+  border-bottom: none;
+}
+
+.order-summary-remove {
+  background: none;
+  border: none;
+  color: var(--color-berry);
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+#order-summary-total {
+  font-weight: 600;
+  color: var(--color-crust);
+}
+
+/* ---------- Form validation feedback ---------- */
+
+.field-error {
+  display: block;
+  color: var(--color-berry);
+  font-size: 0.85rem;
+  margin-top: 0.35rem;
+  min-height: 1.1em;
+}
+
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--color-berry);
+}
+
+#contact-order-summary {
+  background: var(--color-cream-shade);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+#contact-order-summary p {
+  margin: 0;
+}
+
+@media (min-width: 700px) {
+  .flex-2.products-layout > *:first-child {
+    flex: 2 1 0;
+  }
+  .flex-2.products-layout > *:last-child {
+    flex: 1 1 0;
+  }
+}
+
+.site-footer {
+  background: var(--color-crust);
+  color: #f1e4cc;
+  padding: 2.5rem 0;
+  margin-top: 2rem;
+}
+
+.site-footer .wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.site-footer h2 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.site-footer a {
+  color: var(--color-gold);
+}
+
+.site-footer .copyright {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #cbb894;
+  text-align: center;
+}
+
+/* =========================================================
+   Media query — larger screens (tablet and up)
+   Mobile-first: base styles above are the small-screen
+   layout; this query adds the wider, multi-column layout.
+   ========================================================= */
+
+@media (min-width: 700px) {
+  .site-header .wrap {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hero .wrap.flex-2 {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .flex-2 > * {
+    flex: 1 1 0;
+  }
+
+  .flex-2 > *:first-child {
+    flex: 1.1 1 0;
+  }
+
+  .flex-2 > *:last-child {
+    flex: 0.9 1 0;
+  }
+
+  .flex-3 > * {
+    flex: 1 1 0;
+  }
+
+  .info-strip {
+    flex-direction: row;
+  }
+
+  .info-strip > div {
+    flex: 1 1 auto;
+  }
+
+  .site-footer .wrap {
+    flex-direction: row;
+  }
+
+  .site-footer .wrap > div {
+    flex: 1 1 0;
+  }
+
+  form {
+    padding: 2rem;
+  }
+
+  .hero h1 {
+    max-width: 20ch;
+  }
+}
